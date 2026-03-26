@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './App.css';
 
 function App() {
   const videoRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const video = videoRef.current;
@@ -116,6 +118,9 @@ function App() {
           <img src="/logo2.png" alt="Logo" className="logo" />
         </div>
         <h1 className="coming-soon-title">coming soon</h1>
+        <button className="learn-more-btn" onClick={() => navigate('/learn-more')}>
+          Learn More
+        </button>
       </div>
     </div>
   );

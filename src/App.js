@@ -6,6 +6,12 @@ function App() {
   const videoRef = useRef(null);
   const navigate = useNavigate();
 
+  const handleLearnMore = () => {
+    const audio = new Audio('/intro-sound.wav');
+    audio.play().catch(() => {});
+    navigate('/learn-more');
+  };
+
   useEffect(() => {
     const video = videoRef.current;
     
@@ -118,7 +124,7 @@ function App() {
           <img src="/logo2.png" alt="Logo" className="logo" />
         </div>
         <h1 className="coming-soon-title">coming soon</h1>
-        <button className="learn-more-btn" onClick={() => navigate('/learn-more')}>
+        <button className="learn-more-btn" onClick={handleLearnMore}>
           Learn More
         </button>
       </div>

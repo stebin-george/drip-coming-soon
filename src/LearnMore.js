@@ -19,7 +19,7 @@ function LearnMore() {
         <h1 className="lm-headline">Building the Future of<br />Immersive Live Music</h1>
 
         <p className="lm-body">
-          DRIP.LIVE is developing immersive XR music and live experience infrastructure
+          drip.live is developing immersive XR music and live experience infrastructure
           that connects performance, streaming, and interactive audience environments
           across venues and remote spaces.
         </p>
@@ -38,7 +38,7 @@ function LearnMore() {
         </p>
 
         <p className="lm-body">
-          This milestone moves DRIP.LIVE from concept into real-world technical validation
+          This milestone moves drip.live from concept into real-world technical validation
           and brings us closer to building connected immersive experiences across multiple spaces.
         </p>
 
@@ -46,7 +46,7 @@ function LearnMore() {
 
         <h2 className="lm-section-title">What is Sonic Mixer?</h2>
         <p className="lm-body">
-          Sonic Mixer is being developed as the performance engine behind DRIP.LIVE. It is
+          Sonic Mixer is being developed as the performance engine behind drip.live. It is
           designed to support live music capture, immersive audience experiences, and future
           connected performance environments across venues and remote audiences.
         </p>

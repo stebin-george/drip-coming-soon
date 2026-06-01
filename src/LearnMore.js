@@ -1,9 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LearnMore.css';
 
 function LearnMore() {
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'error'
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('sending');
+
+    try {
+      const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSft794ivftHfS9Dce_KHn0CChkmI-a-qp9iFECI47-eJPzevA';
+      const entryId = 'entry.1040340738';
+
+      await fetch(`${formUrl}/formResponse`, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ [entryId]: email }),
+      });
+
+      setStatus('success');
+      setEmail('');
+    } catch {
+      setStatus('error');
+    }
+  };
 
   return (
     <div className="lm-page">
@@ -58,6 +82,29 @@ function LearnMore() {
           This is an important step toward a new format of live experience — one where sound,
           space, streaming, and immersive technology work together across physical and digital environments.
         </p>
+
+        <div className="lm-divider" />
+
+        <div className="lm-register">
+          <h2 className="lm-section-title">Register your interest</h2>
+          <p className="lm-body">Be the first to know when we launch. Join our loyalty program.</p>
+          <form className="lm-form" onSubmit={handleSubmit}>
+            <input
+              type="email"
+              className="lm-email-input"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              disabled={status === 'sending'}
+            />
+            <button type="submit" className="lm-submit-btn" disabled={status === 'sending'}>
+              {status === 'sending' ? 'Sending...' : 'Register'}
+            </button>
+          </form>
+          {status === 'success' && <p className="lm-status success">You're in! We'll be in touch.</p>}
+          {status === 'error' && <p className="lm-status error">Something went wrong. Try again.</p>}
+        </div>
 
         <div className="lm-divider" />
 

@@ -110,6 +110,89 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+.lm-register {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.lm-form {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.lm-email-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.lm-email-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.lm-email-input:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.lm-email-input:disabled {
+  opacity: 0.5;
+}
+
+.lm-submit-btn {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  font-family: inherit;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.lm-submit-btn:hover {
+  border-color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.lm-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lm-status {
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.lm-status.success {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.lm-status.error {
+  color: #ff6b6b;
+}
+
+@media (max-width: 480px) {
+  .lm-form {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 480px) {
   .lm-page {
     padding: 2.5rem 20px 4rem;

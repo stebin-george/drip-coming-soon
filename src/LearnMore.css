@@ -26,7 +26,7 @@
   text-transform: uppercase;
   cursor: pointer;
   padding: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   font-family: inherit;
   transition: color 0.2s ease;
 }
@@ -36,7 +36,7 @@
 }
 
 .lm-logo-wrap {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .lm-logo {
@@ -50,7 +50,7 @@
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.15;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -62,7 +62,7 @@
   font-weight: 400;
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .lm-highlight {
@@ -74,7 +74,7 @@
   width: 40px;
   height: 1px;
   background: rgba(255, 255, 255, 0.15);
-  margin: 2.5rem 0;
+  margin: 1.25rem 0;
 }
 
 .lm-section-title {
@@ -82,7 +82,7 @@
   font-weight: 600;
   letter-spacing: 0.01em;
   color: #ffffff;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .lm-updates {
@@ -122,6 +122,11 @@
   display: flex;
   align-items: flex-start;
   gap: 1rem;
+}
+
+.lm-milestone-tag.done {
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
 .lm-milestone-tag {
@@ -276,6 +281,18 @@
 
 .lm-status.error {
   color: #ff6b6b;
+}
+
+.lm-form-note {
+  margin-top: 1.5rem;
+}
+
+.lm-powered-by {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.05em;
+  margin-top: 3rem;
+  align-self: flex-end;
 }
 
 @media (max-width: 480px) {

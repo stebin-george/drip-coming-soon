@@ -146,7 +146,7 @@ function LearnMore() {
               type="text"
               name="name"
               className="lm-input"
-              placeholder="Name"
+              placeholder="eg: John Doe"
               value={formData.name}
               onChange={handleChange}
               required
@@ -156,7 +156,7 @@ function LearnMore() {
               type="email"
               name="email"
               className="lm-input"
-              placeholder="Email"
+              placeholder="johndoe@example.com"
               value={formData.email}
               onChange={handleChange}
               required
@@ -166,7 +166,7 @@ function LearnMore() {
               type="text"
               name="city"
               className="lm-input"
-              placeholder="City"
+              placeholder="Ibiza"
               value={formData.city}
               onChange={handleChange}
               disabled={status === 'sending'}

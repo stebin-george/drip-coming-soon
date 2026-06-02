@@ -128,7 +128,7 @@ function App() {
           Learn More
         </button>
       </div>
-      <p className="powered-by">pwrd. by DAMN, XOXO INC</p>
+      <p className="powered-by">pwrd. by DAMN, XOXO Inc.</p>
     </div>
   );
 }

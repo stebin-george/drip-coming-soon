@@ -148,7 +148,7 @@ function LearnMore() {
           </a>
         </div>
 
-        <p className="lm-powered-by">pwrd. by DAMN, XOXO INC</p>
+        <p className="lm-powered-by">pwrd. by DAMN, XOXO Inc.</p>
       </div>
     </div>
   );

@@ -110,20 +110,84 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* Roadmap */
+.lm-roadmap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.lm-milestone {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.lm-milestone-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.3rem 0.6rem;
+  border-radius: 2px;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.lm-milestone-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+.lm-milestone-desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+}
+
+/* Register form */
 .lm-register {
   width: 100%;
-  margin-bottom: 2rem;
 }
 
-.lm-form {
+.lm-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.lm-benefits li {
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.75;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.lm-benefits li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: bold;
+}
+
+.lm-form-vertical {
   display: flex;
+  flex-direction: column;
   gap: 0.75rem;
-  margin-top: 1rem;
   width: 100%;
+  margin-top: 0.5rem;
 }
 
-.lm-email-input {
-  flex: 1;
+.lm-input {
+  width: 100%;
   padding: 0.75rem 1rem;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -133,18 +197,43 @@
   font-family: inherit;
   outline: none;
   transition: border-color 0.2s ease;
+  box-sizing: border-box;
 }
 
-.lm-email-input::placeholder {
+.lm-input::placeholder {
   color: rgba(255, 255, 255, 0.35);
 }
 
-.lm-email-input:focus {
+.lm-input:focus {
   border-color: rgba(255, 255, 255, 0.6);
 }
 
-.lm-email-input:disabled {
+.lm-input:disabled {
   opacity: 0.5;
+}
+
+.lm-interest-group {
+  margin: 0.25rem 0;
+}
+
+.lm-interest-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 0.5rem;
+}
+
+.lm-radio {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.lm-radio input[type="radio"] {
+  accent-color: #ffffff;
 }
 
 .lm-submit-btn {
@@ -161,6 +250,8 @@
   font-family: inherit;
   transition: border-color 0.2s ease, background 0.2s ease;
   white-space: nowrap;
+  margin-top: 0.5rem;
+  align-self: flex-start;
 }
 
 .lm-submit-btn:hover {
@@ -185,12 +276,6 @@
 
 .lm-status.error {
   color: #ff6b6b;
-}
-
-@media (max-width: 480px) {
-  .lm-form {
-    flex-direction: column;
-  }
 }
 
 @media (max-width: 480px) {

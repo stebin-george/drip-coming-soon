@@ -4,8 +4,12 @@ import './LearnMore.css';
 
 function LearnMore() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'error'
+  const [formData, setFormData] = useState({ name: '', email: '', city: '', interest: '' });
+  const [status, setStatus] = useState('idle');
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,17 +17,21 @@ function LearnMore() {
 
     try {
       const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSft794ivftHfS9Dce_KHn0CChkmI-a-qp9iFECI47-eJPzevA';
-      const entryId = 'entry.1040340738';
 
       await fetch(`${formUrl}/formResponse`, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({ [entryId]: email }),
+        body: new URLSearchParams({
+          'entry.1040340738': formData.email,
+          'entry.1726547516': formData.name,
+          'entry.1433977636': formData.city,
+          'entry.880172497': formData.interest,
+        }),
       });
 
       setStatus('success');
-      setEmail('');
+      setFormData({ name: '', email: '', city: '', interest: '' });
     } catch {
       setStatus('error');
     }
@@ -85,19 +93,109 @@ function LearnMore() {
 
         <div className="lm-divider" />
 
+        <h2 className="lm-section-title">Map ahead</h2>
+        <div className="lm-roadmap">
+          <div className="lm-milestone">
+            <span className="lm-milestone-tag">M 1</span>
+            <div>
+              <h3 className="lm-milestone-title">A/V Capture</h3>
+              <p className="lm-milestone-desc">Sonic Mixer, live</p>
+            </div>
+          </div>
+          <div className="lm-milestone">
+            <span className="lm-milestone-tag">M 2</span>
+            <div>
+              <h3 className="lm-milestone-title">AR Interaction Layer</h3>
+              <p className="lm-milestone-desc">Immersive audience engagement and experiences</p>
+            </div>
+          </div>
+          <div className="lm-milestone">
+            <span className="lm-milestone-tag">M 3</span>
+            <div>
+              <h3 className="lm-milestone-title">Connectivity Infrastructure</h3>
+              <p className="lm-milestone-desc">Connected experiences across spaces and souls</p>
+            </div>
+          </div>
+          <div className="lm-milestone">
+            <span className="lm-milestone-tag">M 4</span>
+            <div>
+              <h3 className="lm-milestone-title">Hardware Integration</h3>
+              <p className="lm-milestone-desc">Immersive XR experience deployments</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="lm-divider" />
+
         <div className="lm-register">
-          <h2 className="lm-section-title">Register your interest</h2>
-          <p className="lm-body">Be the first to know when we launch. Join our loyalty program.</p>
-          <form className="lm-form" onSubmit={handleSubmit}>
+          <h2 className="lm-section-title">Help Shape the Future of Immersive Live Music</h2>
+          <p className="lm-body">
+            We're currently building the next generation of connected live experiences.
+          </p>
+          <p className="lm-body">Join our early access list to:</p>
+          <ul className="lm-benefits">
+            <li>receive platform updates</li>
+            <li>access future beta programs</li>
+            <li>hear about upcoming deployments</li>
+            <li>stay informed as new cities launch</li>
+          </ul>
+
+          <h3 className="lm-section-title">Register Interest</h3>
+          <form className="lm-form-vertical" onSubmit={handleSubmit}>
             <input
-              type="email"
-              className="lm-email-input"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              name="name"
+              className="lm-input"
+              placeholder="Name"
+              value={formData.name}
+              onChange={handleChange}
               required
               disabled={status === 'sending'}
             />
+            <input
+              type="email"
+              name="email"
+              className="lm-input"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              disabled={status === 'sending'}
+            />
+            <input
+              type="text"
+              name="city"
+              className="lm-input"
+              placeholder="City"
+              value={formData.city}
+              onChange={handleChange}
+              disabled={status === 'sending'}
+            />
+            <div className="lm-interest-group">
+              <p className="lm-interest-label">I am interested as:</p>
+              <label className="lm-radio">
+                <input
+                  type="radio"
+                  name="interest"
+                  value="User"
+                  checked={formData.interest === 'User'}
+                  onChange={handleChange}
+                  disabled={status === 'sending'}
+                />
+                <span>User</span>
+              </label>
+              <label className="lm-radio">
+                <input
+                  type="radio"
+                  name="interest"
+                  value="Artist"
+                  checked={formData.interest === 'Artist'}
+                  onChange={handleChange}
+                  disabled={status === 'sending'}
+                />
+                <span>Artist</span>
+              </label>
+            </div>
             <button type="submit" className="lm-submit-btn" disabled={status === 'sending'}>
               {status === 'sending' ? 'Sending...' : 'Register'}
             </button>

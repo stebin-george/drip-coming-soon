@@ -128,6 +128,7 @@ function LearnMore() {
               {status === 'sending' ? 'Sending...' : 'Register'}
             </button>
           </form>
+          <p className="lm-form-tags">Early access • Future beta experiences • Updates</p>
           {status === 'success' && <p className="lm-status success">You're in! We'll be in touch.</p>}
           {status === 'error' && <p className="lm-status error">Something went wrong. Try again.</p>}
         </div>

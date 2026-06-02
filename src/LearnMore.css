@@ -283,6 +283,13 @@
   color: #ff6b6b;
 }
 
+.lm-form-tags {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.03em;
+  margin-top: 0.75rem;
+}
+
 .lm-form-note {
   margin-top: 1.5rem;
 }

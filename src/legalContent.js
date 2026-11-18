@@ -1,7 +1,7 @@
-// Policy text from "drip.live Legal PoliciesV3.docx" (Nov 17, 2026).
+// Policy text from "drip.live Legal PoliciesV3.docx" (Nov 17, 2026; dated Nov 15, 2026 per Zo).
 // Each section: { heading, body: [string | string[]] } — a string is a paragraph, an array is a bullet list.
 
-const LAST_UPDATED = 'November 17, 2026';
+const LAST_UPDATED = 'November 15, 2026';
 
 export const terms = {
   title: 'Terms of Use',

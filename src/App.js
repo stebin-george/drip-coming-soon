@@ -128,6 +128,11 @@ function App() {
           Learn More
         </button>
       </div>
+      <nav className="policy-links">
+        <a href="/terms" onClick={(e) => { e.preventDefault(); navigate('/terms'); }}>Terms of Use</a>
+        <a href="/privacy" onClick={(e) => { e.preventDefault(); navigate('/privacy'); }}>Privacy Policy</a>
+        <a href="/refunds" onClick={(e) => { e.preventDefault(); navigate('/refunds'); }}>Refund &amp; Cancellation Policy</a>
+      </nav>
       <p className="powered-by">pwrd. by DAMN, XOXO Inc.</p>
     </div>
   );

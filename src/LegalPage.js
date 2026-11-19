@@ -24,7 +24,7 @@ function LegalPage({ doc }) {
   return (
     <div className="dl">
       <SiteHeader />
-      <main className="container legal-doc">
+      <main className="wrap legal-doc">
         <h1>{doc.title}</h1>
         <p className="updated">Last updated: {doc.updated}</p>
         {doc.intro && doc.intro.map((item, i) => <Block key={i} item={item} />)}

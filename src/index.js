@@ -15,7 +15,6 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/learn-more" element={<LearnMore />} />
-        <Route path="/experience" element={<LearnMore />} />
         <Route path="/terms" element={<LegalPage doc={terms} />} />
         <Route path="/privacy" element={<LegalPage doc={privacy} />} />
         <Route path="/refunds" element={<LegalPage doc={refunds} />} />
